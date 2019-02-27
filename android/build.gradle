@@ -20,11 +20,11 @@ rootProject.allprojects {
         jcenter()
     }
 }
-}
+
 
 plugins {
       id 'com.android.application'
-          id 'kotlin-android'
+      id 'kotlin-android'
 }
 android {
     compileSdkVersion 28
