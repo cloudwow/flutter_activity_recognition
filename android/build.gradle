@@ -13,7 +13,10 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-
+plugins {
+      id 'com.android.application'
+      id 'kotlin-android'
+}
 rootProject.allprojects {
     repositories {
         google()
@@ -22,10 +25,7 @@ rootProject.allprojects {
 }
 
 
-plugins {
-      id 'com.android.application'
-      id 'kotlin-android'
-}
+
 android {
     compileSdkVersion 28
 
