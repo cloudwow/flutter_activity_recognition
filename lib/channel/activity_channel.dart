@@ -41,8 +41,8 @@ class _ActivityChannel {
   }
 
   static const MethodChannel _channel =
-      const MethodChannel('activity_recognition/activities');
+      const MethodChannel('activity_recognition_alt/activities');
 
   static const EventChannel _eventChannel =
-      const EventChannel('activity_recognition/activityUpdates');
+      const EventChannel('activity_recognition_alt/activityUpdates');
 }

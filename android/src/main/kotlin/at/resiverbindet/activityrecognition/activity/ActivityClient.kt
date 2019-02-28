@@ -56,14 +56,14 @@ class ActivityClient(private val activity: Activity) :
 
     private fun registerSharedPreferenceChangeListener() {
         val preferences =
-                activity.applicationContext.getSharedPreferences("activity_recognition", MODE_PRIVATE)
+                activity.applicationContext.getSharedPreferences("activity_recognition_alt", MODE_PRIVATE)
 
         preferences.registerOnSharedPreferenceChangeListener(this)
     }
 
     private fun unregisterSharedPreferenceChangeListener() {
         val preferences =
-                activity.applicationContext.getSharedPreferences("activity_recognition", MODE_PRIVATE)
+                activity.applicationContext.getSharedPreferences("activity_recognition_alt", MODE_PRIVATE)
         preferences.unregisterOnSharedPreferenceChangeListener(this)
     }
 

@@ -17,10 +17,10 @@ class ActivityChannel(private val activityClient: ActivityClient) :
         MethodChannel.MethodCallHandler, EventChannel.StreamHandler {
 
     fun register(plugin: ActivityRecognitionPlugin) {
-        val methodChannel = MethodChannel(plugin.registrar.messenger(), "activity_recognition/activities")
+        val methodChannel = MethodChannel(plugin.registrar.messenger(), "activity_recognition_alt/activities")
         methodChannel.setMethodCallHandler(this)
 
-        val eventChannel = EventChannel(plugin.registrar.messenger(), "activity_recognition/activityUpdates")
+        val eventChannel = EventChannel(plugin.registrar.messenger(), "activity_recognition_alt/activityUpdates")
         eventChannel.setStreamHandler(this)
     }
 
