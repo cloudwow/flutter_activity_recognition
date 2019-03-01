@@ -19,16 +19,28 @@ class ActivityClient {
         guard isPaused else {
             return
         }
-        
-        activityManager.startActivityUpdates(to: OperationQueue.init()) { (activity) in
-            if (activity != nil) {
-                self.activityUpdatesCallback?(Result<Activity>.success(with: Activity(from:activity!)))
-            }
+     
+        if CMMotionActivityManager.isActivityAvailable() {
+               NSLog("ABCXYZ isActivityAvailable")
+        activityManager.startActivityUpdates(to: OperationQueue.init(), withHandler:  OnActivity);
+            
+        } else {
+            NSLog("ABCXYZ isActivityAvailable NOT")
+            
         }
         
         isPaused = false
     }
     
+    public func derp(){
+        
+    }
+    public func OnActivity( activity: Optional<CMMotionActivity>) {
+      
+            NSLog("ABCXYZ ActivityChannel got an activity. %@",activity.debugDescription)
+        self.activityUpdatesCallback?(Result<Activity>.success(with: Activity(from:activity!)))
+       
+    }
     public func pause() {
         guard !isPaused else {
             return

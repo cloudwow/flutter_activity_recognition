@@ -14,11 +14,13 @@ class ActivityChannel {
     private let activityUpdatesHandler: ActivityUpdatesHandler
     
     init(activityClient: ActivityClient) {
+         NSLog("ABCXYZ ActivityClient init")
         self.activityClient = activityClient
         self.activityUpdatesHandler = ActivityUpdatesHandler(activityClient: activityClient)
     }
     
     func register(on plugin: SwiftActivityRecognitionPlugin) {
+        NSLog("ABCXYZ ActivityClient register")
         let methodChannel = FlutterMethodChannel(name: "activity_recognition_alt/activities", binaryMessenger: plugin.registrar.messenger())
         methodChannel.setMethodCallHandler(handleMethodCall(_:result:))
         
@@ -27,6 +29,8 @@ class ActivityChannel {
     }
     
     private func handleMethodCall(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+        NSLog("ABCXYZ ActivityClient method call %@",call.method)
+        
         switch call.method {
         case "startActivityUpdates":
             startActivityUpdates()
@@ -36,6 +40,8 @@ class ActivityChannel {
     }
     
     private func startActivityUpdates() {
+        NSLog("ABCXYZ startActivityUpdates")
+        
         activityClient.resume()
     }
     
