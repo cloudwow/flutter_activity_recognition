@@ -20,7 +20,6 @@ class ActivityRecognizedService(name: String = "ActivityRecognizedService") : In
     val TAG = "ActivityRecognizedServi"
 
     override fun onHandleIntent(intent: Intent) {
-        Log.d(TAG, "received activity update!")
         val result = ActivityRecognitionResult.extractResult(intent)
 
         // Get the list of the probable activities associated with the current state of the
