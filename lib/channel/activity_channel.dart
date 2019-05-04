@@ -34,7 +34,6 @@ class _ActivityChannel {
   }
 
   _onActivityUpdateReceived(dynamic activity) {
-    debugPrint("onActivityUpdateReceived");
     assert(activity is String);
     var parsedActivity = Activity.fromJson(json.decode(activity));
     _activityStreamController.add(parsedActivity);
